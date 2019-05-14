@@ -250,3 +250,6 @@ os_hardening_enabled: true
 
 # Set to false to disable installing and configuring auditd.
 os_auditd_enabled: true
+
+# Set default sysctl file
+sysctl_file: /etc/sysctl.conf
