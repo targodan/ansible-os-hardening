@@ -48,6 +48,7 @@
     state: present
     reload: yes
     ignoreerrors: yes
+    sysctl_file: '{{ systcl_file }}'
   with_dict: '{{ sysctl_config }}'
 
 - name: Change various sysctl-settings on rhel6-hosts or older, look at the sysctl-vars file for documentation
@@ -57,6 +58,7 @@
     state: present
     reload: yes
     ignoreerrors: yes
+    sysctl_file: '{{ systcl_file }}'
   with_dict: '{{ sysctl_rhel_config }}'
   when: ((ansible_distribution == 'RedHat' or ansible_distribution == 'Fedora' or ansible_distribution == 'CentOS') and
         ansible_distribution_major_version is version_compare('7', '<')) or ansible_distribution == 'Amazon'
